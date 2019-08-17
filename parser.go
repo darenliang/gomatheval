@@ -1,6 +1,6 @@
 package gomatheval
 
-// Parses tokens to RPN
+// ParseRPN parses tokens to RPN
 func ParseRPN(tokens []interface{}) []interface{} {
 	var stack = expressionStack{}
 	for _, token := range tokens {

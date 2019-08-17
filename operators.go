@@ -2,7 +2,7 @@ package gomatheval
 
 import "math"
 
-// Map containing operator information
+// operatorMap contains a map of operator information
 var operatorMap = map[string]struct {
 	precedence         int
 	rightAssociativity bool
