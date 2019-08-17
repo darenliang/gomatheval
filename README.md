@@ -1,4 +1,7 @@
 # Just Another Golang Math Expression Evaluator
+
+[![GoDoc](https://godoc.org/github.com/darenliang/go-math-eval?status.svg)](https://godoc.org/github.com/darenliang/go-math-eval)
+
 This is just another golang math expression evaluator written in pure Go.
 
 ### What it supports:
