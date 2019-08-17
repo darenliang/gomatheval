@@ -1,4 +1,4 @@
-package go_math_eval
+package gomatheval
 
 // Parses tokens to RPN
 func ParseRPN(tokens []interface{}) []interface{} {

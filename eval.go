@@ -1,4 +1,4 @@
-package go_math_eval
+package gomatheval
 
 // Evaluates tokens in RPN to float64
 func EvalRPN(tokens []interface{}) float64 {

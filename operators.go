@@ -1,4 +1,4 @@
-package go_math_eval
+package gomatheval
 
 import "math"
 
