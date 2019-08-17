@@ -3,7 +3,12 @@
 [![GoDoc](https://godoc.org/github.com/darenliang/gomatheval?status.svg)](https://godoc.org/github.com/darenliang/go-math-eval)
 [![Go report](http://goreportcard.com/badge/darenliang/gomatheval)](https://goreportcard.com/report/github.com/darenliang/go-math-eval)
 
-This is just another golang math expression evaluator written in pure Go.
+This is just another Golang math expression evaluator written in pure Go.
+
+To install:
+```
+go get github.com/darenliang/gomatheval
+```
 
 ### What it supports:
 * Basic operators such as `+ (addition)`, `- (subtraction)`, `* (multiplication)`, `/ (division)`, `^ (power)`.
