@@ -1,5 +1,6 @@
 package go_math_eval
 
+// Evaluates tokens in RPN to float64
 func EvalRPN(tokens []interface{}) float64 {
 	var numStack = make([]float64, 0)
 	for _, token := range tokens {
@@ -23,6 +24,7 @@ func EvalRPN(tokens []interface{}) float64 {
 	return numStack[0]
 }
 
+// Evaluates expression in string to float64
 func EvalExpression(expression string) float64 {
 	return EvalRPN(ParseRPN(SanitizeExpression(expression)))
 }

@@ -1,10 +1,10 @@
 package go_math_eval
 
-func (stack *ExpressionStack) popAndAppend() {
+func (stack *expressionStack) popAndAppend() {
 	stack.output, stack.operators = append(stack.output, stack.operators[len(stack.operators)-1]), stack.operators[:len(stack.operators)-1]
 }
 
-type ExpressionStack struct {
+type expressionStack struct {
 	operators []string
 	output    []interface{}
 }

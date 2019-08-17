@@ -6,6 +6,7 @@ import (
 	"unicode"
 )
 
+// Sanitizes expression to tokens ready to be parsed
 func SanitizeExpression(expression string) []interface{} {
 	var tokens = TokenizeExpression(expression)
 	ParseFloats(&tokens)
@@ -13,6 +14,7 @@ func SanitizeExpression(expression string) []interface{} {
 	return tokens
 }
 
+// Tokenize expressions to string tokens
 func TokenizeExpression(expression string) []interface{} {
 	var tokens []interface{}
 	var currToken strings.Builder
@@ -38,6 +40,7 @@ func TokenizeExpression(expression string) []interface{} {
 	return tokens
 }
 
+// Parse floats in tokens
 func ParseFloats(tokens *[]interface{}) {
 	for i, v := range *tokens {
 		if strV, isStr := v.(string); isStr {
@@ -47,6 +50,8 @@ func ParseFloats(tokens *[]interface{}) {
 		}
 	}
 }
+
+// Process unary operators in tokens
 func ProcessUnaryOperators(tokens *[]interface{}) {
 	for i, _ := range *tokens {
 		var currToken = (*tokens)[i]

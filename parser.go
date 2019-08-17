@@ -1,7 +1,8 @@
 package go_math_eval
 
+// Parses tokens to RPN
 func ParseRPN(tokens []interface{}) []interface{} {
-	var stack = ExpressionStack{}
+	var stack = expressionStack{}
 	for _, token := range tokens {
 		switch token {
 		case "(":

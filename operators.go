@@ -2,6 +2,7 @@ package go_math_eval
 
 import "math"
 
+// Map containing operator information
 var operatorMap = map[string]struct {
 	precedence         int
 	rightAssociativity bool
