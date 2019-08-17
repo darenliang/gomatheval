@@ -53,7 +53,7 @@ func ParseFloats(tokens *[]interface{}) {
 
 // Process unary operators in tokens
 func ProcessUnaryOperators(tokens *[]interface{}) {
-	for i, _ := range *tokens {
+	for i := range *tokens {
 		var currToken = (*tokens)[i]
 		var isFloat bool
 		if currToken == "-" || currToken == "+" {
