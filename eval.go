@@ -6,14 +6,15 @@ func EvalRPN(tokens []interface{}) float64 {
 	for _, token := range tokens {
 		switch value := token.(type) {
 		case string:
-			var lastNum = &numStack[len(numStack)-1]
+			var operandSlice []float64
+			operandSlice = append(operandSlice, numStack[len(numStack)-1])
 			switch operatorMap[value].arity {
 			case 2:
-				var secondLastNum = &numStack[len(numStack)-2]
-				*secondLastNum = operatorMap[value].operation(*secondLastNum, *lastNum)
+				operandSlice = append(operandSlice, numStack[len(numStack)-2])
+				numStack[len(numStack)-2] = operatorMap[value].operation(operandSlice)
 				numStack = numStack[:len(numStack)-1]
 			default:
-				*lastNum = operatorMap[value].operation(*lastNum, 0)
+				numStack[len(numStack)-1] = operatorMap[value].operation(operandSlice)
 			}
 		default:
 			if num, isNum := value.(float64); isNum {
