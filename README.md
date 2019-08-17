@@ -10,6 +10,25 @@ To install:
 go get github.com/darenliang/gomatheval
 ```
 
+### Example usage:
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/darenliang/gomatheval"
+	"math"
+)
+
+func main() {
+	fmt.Println(gomatheval.EvalExpression(fmt.Sprintf("-(3+(sin(%v/2))^2)/4", math.Pi)))
+}
+```
+```
+Output:
+-1
+```
+
 ### What it supports:
 * Basic operators such as `+ (addition)`, `- (subtraction)`, `* (multiplication)`, `/ (division)`, `^ (power)`.
 * 64-bit floating point operations.
