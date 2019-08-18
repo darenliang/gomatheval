@@ -6,7 +6,7 @@ import (
 	"unicode"
 )
 
-// SanitizeExpression sanitizes expression to tokens ready to be parsed
+// SanitizeExpression returns interface of sanitized tokens ready to be parsed
 func SanitizeExpression(expression string) []interface{} {
 	var tokens = TokenizeExpression(expression)
 	ParseFloats(&tokens)
@@ -14,33 +14,33 @@ func SanitizeExpression(expression string) []interface{} {
 	return tokens
 }
 
-// TokenizeExpression tokenizes expressions to string tokens
+// TokenizeExpression returns interface of unprocessed tokens
 func TokenizeExpression(expression string) []interface{} {
 	var tokens []interface{}
 	var currToken strings.Builder
-	for _, chr := range expression {
-		if chr != ' ' {
-			if unicode.IsDigit(chr) || unicode.IsLetter(chr) || chr == '.' {
-				currToken.WriteString(string(chr))
+	for _, char := range expression {
+		if char != ' ' {
+			if unicode.IsDigit(char) || unicode.IsLetter(char) || char == '.' {
+				currToken.WriteString(string(char))
 			} else {
 				var lastToken = currToken.String()
 				if lastToken != "" {
-					tokens = append(tokens, lastToken, string(chr))
+					tokens = append(tokens, lastToken, string(char))
 				} else {
-					tokens = append(tokens, string(chr))
+					tokens = append(tokens, string(char))
 				}
 				currToken.Reset()
 			}
 		}
 	}
-	leftOverToken := currToken.String()
-	if leftOverToken != "" {
-		tokens = append(tokens, leftOverToken)
+	leftoverToken := currToken.String()
+	if leftoverToken != "" && leftoverToken != " " {
+		tokens = append(tokens, leftoverToken)
 	}
 	return tokens
 }
 
-// ParseFloats parses floats in tokens
+// ParseFloats parses floats in tokens interface
 func ParseFloats(tokens *[]interface{}) {
 	for i, v := range *tokens {
 		if strV, isStr := v.(string); isStr {

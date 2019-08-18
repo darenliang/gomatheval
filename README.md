@@ -10,7 +10,8 @@ To install:
 go get github.com/darenliang/gomatheval
 ```
 
-### Example usage:
+### Examples:
+Evaluating expressions
 ```go
 package main
 
@@ -22,11 +23,32 @@ import (
 
 func main() {
 	fmt.Println(gomatheval.EvalExpression(fmt.Sprintf("-(3+(sin(%v/2))^2)/4", math.Pi)))
+	// outputs 1
 }
 ```
-```
-Output:
--1
+Command-Line Application
+```go
+package main
+
+import (
+	"flag"
+	"fmt"
+	"github.com/darenliang/gomatheval"
+)
+
+func main() {
+	optionPtr := flag.String("op", "e", "Select processing option.\ne: Evaluate expression\np: Process to Reverse Polish Notation\nt: Tokenize expression\n")
+	expressionPtr := flag.String("exp", "", "Expression string to be processed")
+	flag.Parse()
+	switch *optionPtr {
+	case "t":
+		fmt.Println(gomatheval.SanitizeExpression(*expressionPtr))
+	case "p":
+		fmt.Println(gomatheval.ParseRPN(gomatheval.SanitizeExpression(*expressionPtr)))
+	default:
+		fmt.Println(gomatheval.EvalExpression(*expressionPtr))
+	}
+}
 ```
 
 ### What it supports:

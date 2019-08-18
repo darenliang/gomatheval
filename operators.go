@@ -39,13 +39,13 @@ var operatorMap = map[string]struct {
 	"tan": {4, true, 1, func(params []float64) float64 {
 		return math.Tan(params[0])
 	}},
+	"abs": {4, true, 1, func(params []float64) float64 {
+		return math.Abs(params[0])
+	}},
 	"-u": {5, true, 1, func(params []float64) float64 {
 		return -params[0]
 	}},
 	"+u": {5, true, 1, func(params []float64) float64 {
 		return +params[0]
-	}},
-	"abs": {5, true, 1, func(params []float64) float64 {
-		return math.Abs(params[0])
 	}},
 }
