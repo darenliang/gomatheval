@@ -1,9 +1,9 @@
-# Just Another Golang Math Expression Evaluator
+# A Simple Golang Math Expression Evaluator
 
 [![GoDoc](https://godoc.org/github.com/darenliang/gomatheval?status.svg)](https://godoc.org/github.com/darenliang/go-math-eval)
 [![Go report](http://goreportcard.com/badge/darenliang/gomatheval)](https://goreportcard.com/report/github.com/darenliang/go-math-eval)
 
-This is just another Golang math expression evaluator written in Go.
+A simple math expression evaluator written in Go.
 
 To install:
 ```
