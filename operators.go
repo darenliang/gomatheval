@@ -24,6 +24,9 @@ var operatorMap = map[string]struct {
 	"^": {3, true, 2, func(params []float64) float64 {
 		return math.Pow(params[1], params[0])
 	}},
+	"lg": {4, true, 1, func(params []float64) float64 {
+		return math.Log2(params[0])
+	}},
 	"ln": {4, true, 1, func(params []float64) float64 {
 		return math.Log(params[0])
 	}},
