@@ -52,7 +52,7 @@ func main() {
 ```
 
 ### What it supports:
-* Basic operators such as `+ (addition)`, `- (subtraction)`, `* (multiplication)`, `/ (division)`, `^ (power)`.
+* Basic operators such as `+ (addition)`, `- (subtraction)`, `* (multiplication)`, `/ (division)`, `% (modulo)`, `^ (power)`.
 * 64-bit floating point operations.
 * Basic functions such as `sin (sine)`, `cos (cosine)`, `tan (tangent)`, `ln (natural logarithm)`, `lg (base 2 logarithm)`, `log (logarithm with variable base)`. More operators coming soon...
 * Unary operators for positive and negative numbers. Includes proper handling of unary precedence operations.
