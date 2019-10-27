@@ -21,6 +21,9 @@ var operatorMap = map[string]struct {
 	"/": {2, false, 2, func(params []float64) float64 {
 		return params[1] / params[0]
 	}},
+	"%": {2, false, 2, func(params []float64) float64 {
+		return math.Mod(params[1], params[0])
+	}},
 	"^": {3, true, 2, func(params []float64) float64 {
 		return math.Pow(params[1], params[0])
 	}},
