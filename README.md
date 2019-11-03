@@ -37,7 +37,10 @@ import (
 )
 
 func main() {
-	optionPtr := flag.String("op", "e", "Select processing option.\ne: Evaluate expression\np: Process to Reverse Polish Notation\nt: Tokenize expression\n")
+	optionPtr := flag.String("op", "e", "Select processing option.\n" +
+		"e: Evaluate expression\n" +
+		"p: Process to Reverse Polish Notation\n" +
+		"t: Tokenize expression\n")
 	expressionPtr := flag.String("exp", "", "Expression string to be processed")
 	flag.Parse()
 	switch *optionPtr {
