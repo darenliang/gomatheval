@@ -1,7 +1,7 @@
 # A Simple Math Expression Evaluator
 
-[![GoDoc](https://godoc.org/github.com/darenliang/gomatheval?status.svg)](https://godoc.org/github.com/darenliang/go-math-eval)
-[![Go report](http://goreportcard.com/badge/darenliang/gomatheval)](https://goreportcard.com/report/github.com/darenliang/go-math-eval)
+[![GoDoc](https://pkg.go.dev/badge/github.com/darenliang/gomatheval?status.svg)](https://pkg.go.dev/github.com/darenliang/gomatheval?tab=doc)
+[![Go report](http://goreportcard.com/badge/darenliang/gomatheval)](https://goreportcard.com/report/github.com/darenliang/gomatheval)
 
 A simple math expression evaluator written in Go using Shunting Yard and Reverse Polish.
 
